@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uma Carta Para Você</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style/estilo.css">
+
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center text-[#3d2b1f]">
+
+    <!-- Tela Inicial (Envelope) -->
+    <div id="intro-screen" class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#121212] transition-opacity duration-1000">
+        <div class="relative group cursor-pointer" onclick="openLetter()">
+            <div id="envelope" class="w-72 h-48 bg-[#d4c5a9] rounded-sm flex items-center justify-center shadow-2xl transition-transform duration-500 group-hover:scale-105 border-b-4 border-[#b8a98a]">
+                <div class="absolute top-0 left-0 w-full h-full border-2 border-[#c2b291] opacity-50 m-1"></div>
+                <div class="text-[#8b7355] text-4xl">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                </div>
+                <div class="absolute -top-4 bg-red-800 w-10 h-10 rounded-full flex items-center justify-center shadow-lg border-2 border-[#5c0d0d]">
+                    <span class="text-white text-xl">❤</span>
+                </div>
+            </div>
+            <p class="mt-12 text-[#d4c5a9] text-xl tracking-widest handwritten text-center animate-pulse">Toque para abrir a carta</p>
+        </div>
+    </div>
+
+    <!-- Conteúdo Principal (Carta) -->
+    <div id="main-content" class="hidden w-full max-w-2xl px-4 py-20 opacity-0 transition-opacity duration-1000">
+        
+        <!-- A Carta -->
+        <div class="paper-texture p-8 md:p-16 rounded-sm relative overflow-hidden mb-16">
+            <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-transparent via-[#dcd0b9] to-transparent"></div>
+            
+            <header class="mb-12">
+                <p class="text-right italic opacity-70">Do fundo do meu coração, 2026</p>
+                <h1 class="text-4xl handwritten mt-4 mb-8">Minha princesinha,</h1>
+            </header>
+
+            <article class="text-xl md:text-2xl leading-relaxed handwritten space-y-6">
+                <p id="letter-text"></p>
+            </article>
+
+            <div id="proposal-section" class="mt-16 text-center opacity-0 transition-all duration-1000">
+                <h2 class="text-3xl md:text-4xl font-bold mb-8 italic">Você aceita namorar comigo?</h2>
+            </div>
+        </div>
+
+        <!-- Galeria de Fotos -->
+        <section class="fade-in-section mb-20">
+            <h3 class="text-[#d4c5a9] text-center text-3xl mb-10 handwritten">Nossos Momentos</h3>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div class="photo-card bg-white p-2 shadow-lg rotate-1">
+                    <img src="img/001.jpeg" alt="Foto 1" class="w-full grayscale hover:grayscale-0 transition-all">
+                </div>
+                <div class="photo-card bg-white p-2 shadow-lg -rotate-2">
+                    <img src="img/nos.jpeg" alt="Foto 2" class="w-full grayscale hover:grayscale-0 transition-all">
+                </div>
+                <div class="photo-card bg-white p-2 shadow-lg rotate-3">
+                    <img src="img/WhatsApp Image 2026-04-27 at 18.49.12.jpeg" alt="Foto 3" class="w-full grayscale hover:grayscale-0 transition-all">
+                </div>
+
+                 <div class="photo-card bg-white p-2 shadow-lg rotate-3">
+                    <img src="img/wp02.jpeg" alt="Foto 4" class="w-full grayscale hover:grayscale-0 transition-all">
+                </div>
+
+                <div class="photo-card bg-white p-2 shadow-lg rotate-3">
+                    <img src="img/filhos.jpeg" alt="Foto 5" class="w-full grayscale hover:grayscale-0 transition-all">
+                </div>
+
+   <div class="photo-card bg-white p-2 shadow-lg rotate-3">
+    <video 
+        class="w-full grayscale hover:grayscale-0 transition-all"
+        controls
+    >
+        <source src="img/WhatsApp Video 2026-04-27 at 19.06.05.mp4" type="video/mp4">
+        Seu navegador não suporta vídeo.
+    </video>
+</div>
+            </div>
+        </section>
+
+        <!-- Escrito Futuro -->
+        <section class="fade-in-section paper-texture p-10 rounded-sm mb-20 flex flex-col items-center text-center">
+            <h3 class="text-3xl mb-6 handwritten font-bold underline decoration-dotted">Escrito Futuro</h3>
+            <div class="w-40 h-40 rounded-full overflow-hidden border-4 border-[#8b7355] mb-6 shadow-xl">
+                <img src="img/filha.jpeg" alt="Nossa futura pequena" class="w-full h-full object-cover">
+            </div>
+            <div class="w-40 h-40 rounded-full overflow-hidden border-4 border-[#8b7355] mb-6 shadow-xl">
+                <img src="img/filho.jpeg" alt="Nossa futura pequena" class="w-full h-full object-cover">
+            </div>
+            <div class="max-w-md space-y-4 text-lg italic">
+                <p>Meu objetivo com você é isso...</p>
+
+                <p>
+                Construir uma família ao seu lado, compartilhar a vida, os sonhos e cada conquista.
+                Imagino nosso futuro juntos, com a nossa pequena Elizabeth iluminando nossos dias
+                e o nosso filho Loran trazendo ainda mais alegria, força e união para nós.
+                </p>
+
+                <p>
+                Quero viver tudo isso com você, cuidar, proteger e estar presente em cada momento,
+                criando nossos filhos com amor, valores e com a presença de Deus guiando nossos caminhos.
+                </p>
+
+                <p class="font-bold">
+                Porque o que eu sinto por você é verdadeiro, e eu te amo muito.
+                </p>
+            </div>
+        </section>
+
+        <!-- Botão Final -->
+        <div class="flex justify-center mb-40">
+            <button onclick="acceptProposal()" class="bg-red-800 hover:bg-red-900 text-white px-12 py-4 rounded-full text-2xl shadow-2xl transform transition hover:scale-110 active:scale-95 animate-bounce">
+                Sim ❤️
+            </button>
+
+            <img src="img/WhatsApp Image 2026-04-27 at 18.49.11.jpeg" width="300px" style="border-radius: 10px;" alt="">
+        </div>
+    </div>
+
+    <!-- Tela de Finalização -->
+    <div id="final-screen" class="fixed inset-0 z-[60] hidden flex flex-col items-center justify-center final-screen text-white text-center px-6">
+        <canvas id="starfield" class="absolute inset-0"></canvas>
+        <div class="relative z-10 space-y-6">
+            <h1 class="text-5xl md:text-7xl handwritten animate-pulse">Agora começa a nossa história ❤️</h1>
+            <p class="text-xl opacity-80 tracking-widest uppercase">Para sempre.</p>
+        </div>
+    </div>
+
+    <!-- Audio (Opcional - Mudar URL para uma música válida) -->
+    <audio id="bg-music" loop>
+        <source src="musica.mpeg" type="audio/mpeg">
+    </audio>
+
+  <script src="js/index.js"></script>
+</body>
+</html>
